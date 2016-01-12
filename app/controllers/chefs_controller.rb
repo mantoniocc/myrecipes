@@ -2,7 +2,6 @@ class ChefsController < ApplicationController
 	#TODO arreglar bug cuando se trata de editar un chef sin estar logueado. Aparece mensaje 
 	#incorrecto del metodo require_same_user. Probar con logged_in?
 	before_action :set_chef, only: [:edit, :update, :show]
-	before_action :require_user, except: [:show, :index]
 	before_action :require_same_user, only: [:edit, :update]
 	
 	def index
